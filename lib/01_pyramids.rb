@@ -16,7 +16,8 @@ def ask_etages
     while  stairs < 1 || stairs > 25 || stairs.even?
         if stairs < 1 || stairs > 25
             puts "Entre un nombre compris entre 1 et 25."
-        else puts "Entre un nombre impair."
+        elsif stairs.even? 
+            puts "Entre un nombre impair."
         end
         stairs = gets.to_i
     end
@@ -27,12 +28,13 @@ end
 def full_pyramid(etages)
     tab = []
     x = "#"
-    while etages > 1 do
+    while etages > 1 do #la boucle s'arrêtera une fois qu'elle aura atteint l'étage 1 c-à-d (2"étage" - 1)
 space = " " * (etages - 1)
 eta = space + x
-tab << eta
 etages -= 1
 x += "##"
+
+tab << eta #mettre eta dans le tableau vide tab[]
     end
     puts tab
 end
@@ -40,12 +42,13 @@ end
 def pyramid_reverse(etages)
     tab = []
     x = "#"
-    while etages > 0 do
+    while etages > 0 do #la boucle s'arrêtera une fois qu'elle aura atteint l'étage c-à-d (1"étage" - 1)
 space = " " * (etages - 1)
 eta = space + x
-tab << eta
 etages -= 1
 x += "##"
+
+tab << eta #mettre eta dans le tableau vide tab[]
     end
     puts tab.reverse
 end
