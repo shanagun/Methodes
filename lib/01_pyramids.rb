@@ -42,7 +42,7 @@ end
 def pyramid_reverse(etages)
     tab = []
     x = "#"
-    while etages > 0 do #la boucle s'arrêtera une fois qu'elle aura atteint l'étage c-à-d (1"étage" - 1)
+    while etages > 0 do #la boucle s'arrêtera une fois qu'elle aura atteint l'étage 0 c-à-d (1"étage" - 1)
 space = " " * (etages - 1)
 eta = space + x
 etages -= 1
